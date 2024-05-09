@@ -77,11 +77,13 @@ this.fetchAllTodos()
         
        }
        </div>
-      <form id='todoForm' onSubmit={this.onTodoFormSubmit} >
-      <input value={this.state.todoNameInput} onChange={this.onTodoChange} type='text' placeholder='Type todo'></input>
-    <button type='submit'>submit</button>
-   </form> 
-   <button onClick={this.toggleDisplayCompleted}>{this.state.displayCompleted ? 'Hide' : 'Show'} completed</button>
+    <Form 
+    onTodoFormSubmit ={this.onTodoFormSubmit}
+    onTodoChange = {this.onTodoChange}
+    todoNameInput = { this.state.todoNameInput}
+    toggleDisplayCompleted = {this.toggleDisplayCompleted}
+    displayCompleted = {this.state.displayCompleted}
+    />
       </div>
     )
   }
