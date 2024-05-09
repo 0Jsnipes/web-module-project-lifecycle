@@ -67,16 +67,12 @@ this.fetchAllTodos()
     return (
       <div>
         <div id = 'error'>Error: {this.state.error}</div>
-        <div id='todos'>
-       <h2>Todos:</h2>
-       {
-        this.state.Todos.reduce((acc, td) => {
-        if (this.state.displayCompleted || !td.completed) return acc.concat(<div onClick={this.toggleCompleted(td.id)} key = {td.id}>{td.name}{td.completed ? '✓':''} </div>)
-          return acc 
-        }, [])
-        
-       }
-       </div>
+     <TodoList 
+     Todos = {this.state.Todos}
+     displayCompleted = {this.state.displayCompleted}
+     toggleCompleted = {this.toggleCompleted}     
+     />
+      
     <Form 
     onTodoFormSubmit ={this.onTodoFormSubmit}
     onTodoChange = {this.onTodoChange}

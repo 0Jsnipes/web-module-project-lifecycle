@@ -1,10 +1,9 @@
 
 import React from 'react'
-import App from './App'
+
 export default class Form extends React.Component {
  
   render() {
-    const {onTodoFormSubmit} = this.props
     return( 
     <div>
       <form id='todoForm' onSubmit={this.props.onTodoFormSubmit} >
